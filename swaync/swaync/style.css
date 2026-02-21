@@ -1,0 +1,81 @@
+@import "/home/npc/.cache/wal/colors-waybar.css";  /* или colors.css — как у тебя называется */
+
+/* Основные переменные (если pywal их не задал — подстрахуемся) */
+@define-color bg        #1e1e2e;  /* fallback */
+@define-color fg        #cdd6f4;
+@define-color accent    #89b4fa;
+
+/* Фон всего центра и отдельных уведомлений */
+.notification,
+.control-center,
+.notification-default-action,
+.notification-action {
+    background: alpha(@background, 0.92);   /* почти непрозрачный фон */
+    border: 1px solid alpha(@color3, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Текст и иконки — делаем контрастными */
+.notification-content,
+.notification summary,
+.notification body,
+.widget-title,
+.widget-dnd,
+.widget-mpris * {
+    color: @foreground;
+}
+
+/* Кнопки внутри уведомлений */
+.notification-action,
+.notification-default-action {
+    margin: 4px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: alpha(@color3, 0.25);
+    color: @foreground;
+}
+
+.notification-action:hover,
+.notification-default-action:hover {
+    background: alpha(@color3, 0.5);
+}
+
+/* DND переключатель */
+.widget-dnd > switch {
+    background: alpha(@color1, 0.4);
+    border-radius: 999px;
+}
+
+.widget-dnd > switch:checked {
+    background: alpha(@color2, 0.7);
+}
+
+/* Заголовок центра */
+.widget-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px 12px;
+    background: alpha(@background, 0.95);
+    border-bottom: 1px solid alpha(@color3, 0.3);
+}
+
+/* Кнопка Clear All */
+.widget-title button {
+    background: alpha(@color9, 0.4);
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin-right: 8px;
+}
+
+.widget-title button:hover {
+    background: alpha(@color9, 0.7);
+}
+
+/* MPRIS виджет */
+.widget-mpris {
+    background: alpha(@background, 0.92);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px;
+}
