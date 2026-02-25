@@ -1,5 +1,1 @@
-# How to use
-Everforest themed: 
-```shell
-git checkout @~
-```
+stow -t ~/.config config
