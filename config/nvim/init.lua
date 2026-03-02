@@ -184,3 +184,6 @@ require("lazy").setup({
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 -- Toggle render-markdown для текущего буфера
 vim.keymap.set('n', '<leader>md', ':RenderMarkdown toggle<CR>', { desc = 'Toggle Markdown Render' })
+
+-- Переключение раскладки (Wayland/Hyprland)
+require("rus-kbd")
