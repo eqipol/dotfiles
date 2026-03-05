@@ -20,14 +20,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Тема catppuccin frappe
 require("lazy").setup({
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000,
-    config = function()
-      require("catppuccin").setup({ flavour = "frappe" })
-      vim.cmd.colorscheme "catppuccin"
-    end
-  },
+{'yorumicolors/yorumi.nvim'},
 -- Красивая строка снизу
 {
   'nvim-lualine/lualine.nvim',
@@ -170,20 +164,17 @@ require("lazy").setup({
       },
     })
   end,
-
-  -- Загружать по хоткею (лениво)
   keys = {
     { "<leader>e", function() require("nvim-tree.api").tree.focus() end, desc = "NvimTree Focus/Toggle" },
   },
 },
-  -- Telescope для поиска заметок
-  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+-- Telescope для поиска заметок
+{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 })
-
 -- Горячие клавиши (примеры)
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 -- Toggle render-markdown для текущего буфера
 vim.keymap.set('n', '<leader>md', ':RenderMarkdown toggle<CR>', { desc = 'Toggle Markdown Render' })
-
+vim.cmd("colorscheme yorumi")
 -- Переключение раскладки (Wayland/Hyprland)
 require("rus-kbd")
