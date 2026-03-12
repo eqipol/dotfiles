@@ -21,7 +21,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-{'yorumicolors/yorumi.nvim'},
+--{'yorumicolors/yorumi.nvim'},
+{ 'projekt0n/github-nvim-theme', name = 'github-theme' },
 -- Красивая строка снизу
 {
   'nvim-lualine/lualine.nvim',
@@ -175,6 +176,6 @@ require("lazy").setup({
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 -- Toggle render-markdown для текущего буфера
 vim.keymap.set('n', '<leader>md', ':RenderMarkdown toggle<CR>', { desc = 'Toggle Markdown Render' })
-vim.cmd("colorscheme yorumi")
+vim.cmd("colorscheme github_light")
 -- Переключение раскладки (Wayland/Hyprland)
 require("rus-kbd")

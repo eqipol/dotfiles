@@ -180,4 +180,8 @@ textbox-prompt-colon {
 
 //@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
 
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+//@theme "/usr/share/rofi/themes/paper-float.rasi"
+
+@theme "/usr/share/rofi/themes/Paper.rasi"
