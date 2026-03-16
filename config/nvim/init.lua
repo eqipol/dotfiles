@@ -23,7 +23,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 --{'yorumicolors/yorumi.nvim'},
 -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-{ 'AlphaTechnolog/pywal.nvim', as = 'pywal' },
+-- { 'AlphaTechnolog/pywal.nvim', as = 'pywal' },
+{'rebelot/kanagawa.nvim', name = 'kanagawa'},
 -- Красивая строка снизу
 {
   'nvim-lualine/lualine.nvim',
@@ -177,6 +178,6 @@ require("lazy").setup({
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 -- Toggle render-markdown для текущего буфера
 vim.keymap.set('n', '<leader>md', ':RenderMarkdown toggle<CR>', { desc = 'Toggle Markdown Render' })
-vim.cmd("colorscheme pywal")
+vim.cmd("colorscheme kanagawa-dragon")
 -- Переключение раскладки (Wayland/Hyprland)
 require("rus-kbd")
