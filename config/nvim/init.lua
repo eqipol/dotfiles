@@ -173,6 +173,36 @@ require("lazy").setup({
 },
 -- Telescope для поиска заметок
 { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  {
+    "williamboman/mason.nvim",
+    config = true,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    opts = {
+      ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "clangd" },
+      -- УБЕРИ handlers / setup_handlers — они больше не нужны
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",  -- ← оставляем!
+    -- dependencies = { "williamboman/mason-lspconfig.nvim" },  -- можно убрать, если не критично
+    config = function()
+      -- Здесь ТОЛЬКО кастомные настройки + enable
+      vim.lsp.config('lua_ls', {
+        settings = {
+          Lua = { diagnostics = { globals = { 'vim' } } },
+        },
+      })
+
+      -- другие vim.lsp.config(...)
+
+      vim.lsp.enable({ "lua_ls", "ts_ls", "gopls", "pyright", "clangd" })
+    end,
+  },
 })
 -- Горячие клавиши (примеры)
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
