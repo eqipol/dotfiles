@@ -32,7 +32,7 @@ require("lazy").setup({
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'catppuccin',          -- автоматически берёт frappe, если выбрана тема
+        --theme = 'catppuccin',          -- автоматически берёт frappe, если выбрана тема
         icons_enabled = true,
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
@@ -188,19 +188,62 @@ require("lazy").setup({
   },
 
   {
-    "neovim/nvim-lspconfig",  -- ← оставляем!
-    -- dependencies = { "williamboman/mason-lspconfig.nvim" },  -- можно убрать, если не критично
+    "neovim/nvim-lspconfig",
     config = function()
-      -- Здесь ТОЛЬКО кастомные настройки + enable
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
       vim.lsp.config('lua_ls', {
+        capabilities = capabilities,
         settings = {
           Lua = { diagnostics = { globals = { 'vim' } } },
         },
       })
 
-      -- другие vim.lsp.config(...)
-
       vim.lsp.enable({ "lua_ls", "ts_ls", "gopls", "pyright", "clangd" })
+    end,
+  },
+
+  -- Автодополнение (nvim-cmp)
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",      -- LSP source
+      "hrsh7th/cmp-buffer",        -- буфер
+      "hrsh7th/cmp-path",          -- пути
+      "windwp/nvim-autopairs",     -- автозакрытие скобок/кавычек
+    },
+    config = function()
+      local cmp = require("cmp")
+      require("nvim-autopairs").setup()
+
+      cmp.setup({
+        mapping = cmp.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+      })
     end,
   },
 })
