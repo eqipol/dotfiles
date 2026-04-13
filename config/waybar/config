@@ -1,18 +1,10 @@
-//   _ _ _ _____ __ __ _____ _____ _____
-//  | | | |  _  |  |  | __  |  _  | __  |
-//  | | | |     |_   _| __ -|     |    -|
-//  |_____|__|__| |_| |_____|__|__|__|__|  CONFIG
-//
-//  by Bina
-
-
 {
 	// load modules
 	"include": "~/.config/waybar/modules.json",
 	
 	// general settings
 	"position": "top",
-	"margin-top": 8,
+	"margin-top": 5,
 	"margin-bottom": 0,
 	"layer": "top",
 	"margin-left": 8,
@@ -36,9 +28,7 @@
        "modules-right": [
            "pulseaudio",
 		   "hyprland/language",
-           "bluetooth",
            "network",
-           "battery", 
 		   "tray",
            "custom/exit"
         ]

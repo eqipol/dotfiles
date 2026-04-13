@@ -1,11 +1,3 @@
-//   _ _ _ _____ __ __ _____ _____ _____
-//  | | | |  _  |  |  | __  |  _  | __  |
-//  | | | |     |_   _| __ -|     |    -|
-//  |_____|__|__| |_| |_____|__|__|__|__|  MODULES
-//
-//  by Bina
-
-
 {
 	// workspaces
 	"hyprland/workspaces" : {
@@ -32,70 +24,25 @@
 		"on-click-middle": "close",
 	},
 	
-	// clock
-	"clock": {  
+	"clock": {
 		"interval": 1,
 		"format": "{:%H:%M}",
-		//"format": "{:%I:%M %p}", // AM PM format
-		"format-alt": "{:%A, %B %d - %H:%M}",
-		"tooltip-format": "<big>{calendar}</big>",
+		"format-alt": "{:%A, %B %d — %H:%M}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><span font='monospace 10'>{calendar}</span></tt>",
+		"locale": "ru_RU.UTF-8",                  
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,
 			"weeks-pos": "right",
 			"on-scroll": 1,
 			"format": {
-				"months": "<span color='#ffffff'><b>{}</b></span>",
-				"days": "<span color='#ffffff'><b>{}</b></span>",
-				"weeks": "<span color='#ffffff'><b>W{}</b></span>",
+				"months":   "<span color='#ffffff'><b>{}</b></span>",
+				"days":     "<span color='#ffffff'><b>{}</b></span>",
+				"weeks":    "<span color='#ff79c6'><b>Н{}</b></span>",  
 				"weekdays": "<span color='#ffffff'><b>{}</b></span>",
-				"today": "<span color='#ffffff'><b><u>{}</u></b></span>"
+				"today":    "<span color='#f1fa8c'><b><u>{}</u></b></span>"
 			}
 		}
-	},
-
-// 	"clock": {
-//     "interval": 1,
-//     "format": "{:%H:%M}",
-//     // "format": "{:%I:%M %p}",  // если хочешь 12-часовой формат с AM/PM
-//     "format-alt": "{:%A, %B %d — %H:%M}",
-//     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><span font='monospace 10'>{calendar}</span></tt>",
-//     "locale": "ru_RU.UTF-8",                  // ← Главное: включаем русскую локаль
-//     "calendar": {
-//         "mode": "month",
-//         "mode-mon-col": 3,
-//         "weeks-pos": "right",
-//         "on-scroll": 1,
-//         "format": {
-//             "months":   "<span color='#ffffff'><b>{}</b></span>",
-//             "days":     "<span color='#ffffff'><b>{}</b></span>",
-//             "weeks":    "<span color='#ff79c6'><b>Н{}</b></span>",  // «Н» от «неделя»
-//             "weekdays": "<span color='#ffffff'><b>{}</b></span>",
-//             "today":    "<span color='#f1fa8c'><b><u>{}</u></b></span>"
-//         }
-//     }
-// },
-
-	"clock": {
-	"interval": 1,
-	"format": "{:%H:%M}",
-	// "format": "{:%I:%M %p}",  // если хочешь 12-часовой формат с AM/PM
-	"format-alt": "{:%A, %B %d — %H:%M}",
-	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><span font='monospace 10'>{calendar}</span></tt>",
-	"locale": "ru_RU.UTF-8",                  // ← Главное: включаем русскую локаль
-	"calendar": {
-		"mode": "month",
-		"mode-mon-col": 3,
-		"weeks-pos": "right",
-		"on-scroll": 1,
-		"format": {
-			"months":   "<span color='#ffffff'><b>{}</b></span>",
-	"days":     "<span color='#ffffff'><b>{}</b></span>",
-	"weeks":    "<span color='#ff79c6'><b>Н{}</b></span>",  // «Н» от «неделя»
-	"weekdays": "<span color='#ffffff'><b>{}</b></span>",
-	"today":    "<span color='#f1fa8c'><b><u>{}</u></b></span>"
-	}
-	}
 	},
 	
 	// hardware
