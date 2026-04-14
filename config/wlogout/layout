@@ -5,17 +5,17 @@
 }
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "systemctl reboot || loginctl reboot",
     "keybind" : "r"
 }
+
 {
     "label" : "logout",
-    "action" : "logout",
+    "action" : "pkill Hyprland || pkill sway || pkill niri || loginctl terminate-user $USER",
     "keybind" : "e"
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "systemctl poweroff || loginctl poweroff",
     "keybind" : "s"
 }
-

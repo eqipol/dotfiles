@@ -273,3 +273,58 @@ padding: 0 10px;
 color: #f38ba8;
 font-weight: bold;
 }
+
+#custom-tomat.work {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}
+#custom-tomat.work-paused {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}
+#custom-tomat.break {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}
+#custom-tomat.break-paused {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}
+#custom-tomat.long-break {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}
+#custom-tomat.long-break-paused {
+background-color: @set;
+font-size: 16px;
+color: @text;
+border-radius: 5px;
+padding: 1px 10px 0px 10px;
+margin: 4px 1px;
+opacity: 0.9;
+}

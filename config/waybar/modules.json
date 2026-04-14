@@ -149,6 +149,17 @@
 		"format-plugged": " {capacity}%",
 		"format-icons": ["", "", "", "", ""]
 	},
+
+	//pomodoro
+	"custom/tomat": {
+		"exec": "tomat status",
+    	"interval": 1,
+    	"return-type": "json",
+    	"format": "{}",
+    	"on-click": "tomat toggle",
+    	"on-click-right": "tomat skip",
+		"on-click-middle": "tomat stop"
+  	},
 	
 	// power menu
 	"custom/exit": {

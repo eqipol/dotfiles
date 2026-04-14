@@ -21,6 +21,7 @@
         ],
         
         "modules-center": [
+			"custom/tomat",
             "clock",
 			"custom/swaync"
         ],
